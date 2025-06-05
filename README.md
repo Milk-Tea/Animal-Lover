@@ -1,3 +1,7 @@
+
+<img width="870" alt="Screenshot 2025-06-05 at 08 23 44" src="https://github.com/user-attachments/assets/5a2784d3-6d35-4cef-9ea4-a44a7fff6af5" />
+<img width="211" alt="Screenshot 2025-06-05 at 08 23 49" src="https://github.com/user-attachments/assets/b8efc349-3b3d-436b-be39-98a520b90195" />
+
 # Animal Lover
 
 > A platform for animal lovers to document their favourite animals, rank them and understand them better!
