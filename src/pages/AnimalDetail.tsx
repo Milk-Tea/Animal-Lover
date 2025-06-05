@@ -1,4 +1,5 @@
 import React from "react"
+import AnimalCard from "../components/AnimalCard"
 /**
  * - to return the specifics from the animal that was listed as a favourite so that the user can like its characteristics.
  * 
@@ -10,7 +11,7 @@ const AnimalDetail:React.FC = ()=> {
 
     return (
         <div>
-            <AnimalDetail />
+            <AnimalCard />
         </div>
     )
 }

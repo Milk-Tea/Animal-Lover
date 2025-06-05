@@ -13,7 +13,9 @@
 - [API](#api)
 - [Development](#development)
 - [License](#license)
+- [Known Bugs](#known-bugs)
 - [Wishlist](#wishlist)
+- [Thoughts] (#thoughts)
 
 ## Overview
 
@@ -93,9 +95,46 @@ More API endpoints and documentation to follow as this evolves.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## Known Bugs
+
+- Routing is not set up 
+- Testing is not complete, issues using Jest to test Vite related code (specificially the env variables)
+- Cannot Navigate from a favourited animal to its details page
+- Getting and displaying animal characteristics not complete and not linked to animal card, hardcoded atm. 
+- Mobile responsiveness not done or tested.
+- API with data caching not done. 
+
 ## Wishlist
 
+- List of existing animals that the user can choose from instead of having to type their own
+- The above also allows the user to discover new animals (maybe on an explore page)
 - Grouping and sorting based on certain characteristics so that the user can rank the animals based on those characteristics
--
+- Allow user removal of favourited animal
+- Navigation of some sorts to navigate back to the landing page after having visited the details page. Maybe a "back" button or breadcrumbs.
+- Some sort of validation to ensure that the user is entering an animal and not random things
+- If the user is adding random things, the API returns an empty array as it can't match anything so it would be helpful to provide the user with feedback that their animal does not exist or can't be found.
+- User friendly error handling 
+- Pictures and gallery/slider for Animal Detail Page
+- Proper unit tests 
+- Automated UI tests with Cypress to test expected user behaviours
+- Future: Store the info in a DB like MongoDB, host on AWS S3
+- Optimisation in terms of code splitting, tree shaking and image optimization (Major issue on for Page Speed Insights)
 
-1hr25mins51s 04/06
+## Thoughts
+
+Initially when I started, I misread what the Ninja API endpoint does, my aim was to get a list of animals that the user can look through and pick the ones that are their favourite. After spending some time on that and getting no results, I went back to read the API docs and I realised my mistake. The endpoint requires a parameter that specifies which animal you want detailed information from. I then had to quickly adapt my architecture and flow to prevent too much time spent/wasted (which isn't the point of the project), that resulted in mostly pseudo code, and code that was not thoroughly tested. 
+
+It makes me uncomfortable that I was not able to properly implement everything before handing it in, but the project notes said no more than 3 hrs so I had to plan my time adequately. 
+
+I went with React 18.2.0 because despited being the latest, 19 was only recently released and it has not yet been properly community tested. I know that many projects using 18.2.0 has gone to production so that is the safest. 
+
+I chose Tailwind 4 because it is supposedly faster (with new rust engine) with smaller bundle sizes.
+
+For the data caching, I would have probably have gone with Tanstack Query (formerly React Query). Truthfully, I have not used this for a while, but from a quick Google search and its docs, it seems most sensible for this use case, mostly because of "Server state: Is persisted remotely in a location you may not control or own", I do not own or manage API ninja's animal enpoint.
+
+If I had more time, I would have probaly wrestled with the issue of VITE env variables causing jest mock issues. 
+I went with Vite because it was simpler to set up and Webpack is seemingly on its way out. Although my experience with Vite + Jest is limited, hence the issues with mocking. 
+
+For future implementations and considerations, I would have liked to implement an "intelligent" explore algorithm that suggest to the user "new" animals to their favourites collection, based on which characteristics they like or dislike. 
+
+Total time taken for project: 3hrs 1min 59 seconds including write up.
